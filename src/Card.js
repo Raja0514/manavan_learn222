@@ -4,24 +4,28 @@ import { Component } from "react/cjs/react.development";
 class Card extends Component {
   constructor(props) {
     super(props);
-    this.state = { count: '' };
+    this.state = { name: '' };
+
+    this.handleChange=this.handleChange.bind(this)
+
   }
- myClick() {
-    this.setState({ count: this.state.count + 1 });
+
+  handleChange(event){
+
+    this.setState({
+      name:event.target.value
+    })
   }
-myClick1() {
-    this.setState({ count: this.state.count - 1 });
-}
+ 
 
 render() {
     return (
       <React.Fragment>
         <div>
-          <h1>Counter App</h1>
-          <h1>Count:{this.state.count}</h1>
-          <button onClick={this.myClick.bind(this)}>Increment</button>
-          <br></br>
-          <button onClick={this.myClick1.bind(this)}>Decrement</button>
+          <h1>Enter the Name</h1>
+          <input type="text" onChange={this.handleChange}></input>
+          <h1>{this.state.name}</h1>
+          
         </div>
       </React.Fragment>
     );
