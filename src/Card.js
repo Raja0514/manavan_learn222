@@ -7,10 +7,10 @@ class Card extends Component {
     this.state = { count: '' };
   }
  myClick() {
-    this.setState({ count: this.state.count + 1 });
+    this.setState({ count: this.state.count});
   }
 myClick1() {
-    this.setState({ count: this.state.count - 1 });
+    this.setState({ count: this.state.count});
 }
 
 render() {
